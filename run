@@ -1,0 +1,8 @@
+#!/bin/bash
+
+source venv/bin/activate
+
+echo "Bucket Count        Flavor              Bucket Life    Max Life     Min Life"
+echo "----------------------------------------------------------------------------"
+python summary.py | sort -nr | sed 's/,//g'
+
