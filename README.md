@@ -1,4 +1,12 @@
 ```
+Bucket Count - How many buckets moved since start of record collection.
+Flavor       - What flavor this is.
+Bucket Life  - Average life of a bucket
+Max Life     - Longest number of days a bucket lived.
+Min Life     - Shortest number of days a bucket lived.
+```
+
+```
 $ python3 -m virtualenv venv
 $ ./run 
 Bucket Count        Flavor              Bucket Life    Max Life     Min Life
