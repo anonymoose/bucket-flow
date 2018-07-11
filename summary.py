@@ -17,19 +17,15 @@ def main(lines):
         if flavor not in inv:
             inv[flavor] = {
                 'cnt': 1,
-                'diff_sum': int(diff),
-                'max_diff': int(diff),
-                'min_diff': int(diff)
+                'diff_sum': diff,
+                'max_diff': diff,
+                'min_diff': diff
             }
         else:
             inv[flavor]['cnt'] += 1
-            inv[flavor]['diff_sum'] += int(diff)
-            max_diff = inv[flavor]['max_diff']
-            if int(diff) > int(max_diff):
-                inv[flavor]['max_diff'] = diff
-            min_diff = inv[flavor]['min_diff']
-            if int(diff) < int(min_diff):
-                inv[flavor]['min_diff'] = diff
+            inv[flavor]['diff_sum'] += diff
+            inv[flavor]['max_diff'] = max(inv[flavor]['max_diff'], diff)
+            inv[flavor]['min_diff'] = min(inv[flavor]['min_diff'], diff)
 
     for flavor in inv:
         dat = inv[flavor]
